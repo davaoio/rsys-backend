@@ -13,8 +13,3 @@
 Route::group(['namespace' => 'V1'], function () {
     Route::get('/', 'UserController@index');
 });
-
-
-Route::get('/login', function () {
-    return File::get(public_path() . '/login.html');
-});
