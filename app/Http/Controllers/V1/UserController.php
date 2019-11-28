@@ -30,15 +30,13 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-
-        return view('welcome', compact('users'));
+        return response()->json(['~WELCOME TO RSYS~']);
     }
 
     /**
      * Store a newly created user in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -49,7 +47,7 @@ class UserController extends Controller
     /**
      * Display the specified user.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show(User $user)
@@ -60,8 +58,8 @@ class UserController extends Controller
     /**
      * Update the specified user in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateUserRequest $request, User $user)
@@ -76,7 +74,7 @@ class UserController extends Controller
     /**
      * Remove the specified user from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

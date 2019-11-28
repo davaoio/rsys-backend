@@ -1,6 +1,7 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
+
 use App\Models\User;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
@@ -18,11 +19,12 @@ use Faker\Generator as Faker;
 
 $factory->define(User::class, function (Faker $faker) {
     return [
-        'first_name'        => $faker->firstName,
-        'last_name'         => $faker->lastName,
-        'email'             => $faker->unique()->safeEmail,
+        'first_name' => $faker->firstName,
+        'last_name' => $faker->lastName,
+        'country' => $faker->country,
+        'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
-        'password'          => Hash::make('password'),
-        'remember_token'    => Str::random(10),
+        'password' => Hash::make('password'),
+        'remember_token' => Str::random(10),
     ];
 });

@@ -35,6 +35,7 @@ class RegisterUserRequest extends FormRequest
                 'max:255',
                 'unique:users'
             ],
+            'country' => 'required|string',
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ];
     }
